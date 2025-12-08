@@ -10,6 +10,7 @@ spec:
   {{- end }}
   strategy:
     type: {{ .Values.stategy }}
+  revisionHistoryLimit: 5
   selector:
     matchLabels:
       {{- include "sonarr.selectorLabels" . | nindent 6 }}
@@ -42,6 +43,15 @@ spec:
           {{- end }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+           - name: PUID
+             value: "1000"
+           - name: PGID
+             value: "1000"
+           - name: TZ
+             value: "Europe/Stockholm"
+           - name: UMASK
+             value: "002"
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}

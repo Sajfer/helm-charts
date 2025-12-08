@@ -148,6 +148,14 @@ volumes:
   - name: sonarr-data
     persistentVolumeClaim:
       claimName: sonarr-data
+  - name: series
+    nfs:
+      server: 192.168.1.5
+      path: /mnt/storage/share/series
+  - name: downloads
+    nfs:
+      server: 192.168.1.5
+      path: /mnt/storage/share/downloads
 
 # - name: foo
 #   secret:
@@ -158,6 +166,10 @@ volumes:
 volumeMounts:
   - name: sonarr-data
     mountPath: /config
+  - name: series
+    mountPath: /tv
+  - name: downloads
+    mountPath: /downloads
 
 # - name: foo
 #   mountPath: "/etc/foo"
