@@ -150,8 +150,8 @@ volumes:
       claimName: radarr-data
   - name: movies
     nfs:
-      server: 192.168.1.5
-      path: /mnt/storage/share/movies
+      server: 192.168.1.6
+      path: /storage/movies
   - name: downloads
     nfs:
       server: 192.168.1.5
