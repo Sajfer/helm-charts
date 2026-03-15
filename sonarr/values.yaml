@@ -150,8 +150,8 @@ volumes:
       claimName: sonarr-data
   - name: series
     nfs:
-      server: 192.168.1.5
-      path: /mnt/storage/share/series
+      server: 192.168.1.6
+      path: /storage/series
   - name: downloads
     nfs:
       server: 192.168.1.5
