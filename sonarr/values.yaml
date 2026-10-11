@@ -130,10 +130,16 @@ livenessProbe:
   httpGet:
     path: /ping
     port: http
+    httpHeaders:
+      - name: Host
+        value: localhost
 readinessProbe:
   httpGet:
     path: /ping
     port: http
+    httpHeaders:
+      - name: Host
+        value: localhost
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
 autoscaling:
