@@ -52,6 +52,9 @@ spec:
              value: "Europe/Stockholm"
            - name: UMASK
              value: "002"
+           {{- with .Values.extraEnv }}
+           {{- toYaml . | nindent 11 }}
+           {{- end }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
