@@ -9,7 +9,7 @@ spec:
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   strategy:
-    type: {{ .Values.stategy }}
+    type: {{ .Values.strategy }}
   revisionHistoryLimit: 5
   selector:
     matchLabels:
