@@ -146,6 +146,11 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
+# The radarr-data PVC mounted at /config. Longhorn volumes can be grown in
+# place, so raising this later just expands the existing volume.
+persistence:
+  size: 1Gi
+
 # Additional volumes on the output Deployment definition.
 volumes:
   - name: radarr-data
