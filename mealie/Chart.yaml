@@ -1,0 +1,10 @@
+apiVersion: v2
+name: mealie
+description: Mealie recipe manager and meal planner
+type: application
+
+# Bump on every change to the chart, including appVersion
+version: 0.1.0
+
+# renovate: datasource=docker depName=ghcr.io/mealie-recipes/mealie
+appVersion: "v3.30.0"
