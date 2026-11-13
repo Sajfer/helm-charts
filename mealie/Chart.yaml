@@ -7,4 +7,4 @@ type: application
 version: 0.1.0
 
 # renovate: datasource=docker depName=ghcr.io/mealie-recipes/mealie
-appVersion: "v3.30.0"
+appVersion: "v3.31.0"
